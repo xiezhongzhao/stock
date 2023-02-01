@@ -125,13 +125,13 @@ if __name__ == '__main__':
     jisilu_website = config.jisilu_website
 
     pe_value = getLixinger(lixinger_website, lixinger_usr_name, lixinger_password)
-    file_logger.info("中证800 PE-TTM value: {}".format(pe_value))
+    file_logger.info("中证800 PE-TTM: {}".format(pe_value))
 
     earning_ratio_value = getBondYields(investing_website)
-    file_logger.info("Bond Yields value: {}".format(earning_ratio_value))
+    file_logger.info("中国十年期国债收益率: {}".format(earning_ratio_value))
 
     convert_value = getConvertibleBond(jisilu_website)
-    file_logger.info("convertible Bond value: {}".format(convert_value))
+    file_logger.info("可转债中位数价格: {}".format(convert_value))
 
     ### 基金推荐指数
     fund_level_info = getFundClass(pe_value, earning_ratio_value)
