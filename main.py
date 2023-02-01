@@ -1,6 +1,7 @@
 import logging
 import random
 from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from time import sleep
 import config
@@ -12,7 +13,9 @@ def getLixinger(website, usr_name, password):
     lixinger_usr_name = usr_name
     lixinger_password = password
 
-    browser = webdriver.Chrome()
+    chrome_options = Options()
+    chrome_options.add_argument('--headless')
+    browser = webdriver.Chrome(options = chrome_options)
     browser.get(website)
     sleep(random.uniform(2, 3))
 
@@ -51,7 +54,9 @@ def getLixinger(website, usr_name, password):
 
 ### 读取macroview.club十年期国债收益率
 def getBondYields(website):
-    browser = webdriver.Chrome()
+    chrome_options = Options()
+    chrome_options.add_argument('--headless')
+    browser = webdriver.Chrome(options = chrome_options)
     browser.get(website)
     sleep(random.uniform(1, 2))
 
@@ -64,7 +69,9 @@ def getBondYields(website):
 
 ### 获得集思录可转债中位数
 def getConvertibleBond(website):
-    browser = webdriver.Chrome()
+    chrome_options = Options()
+    chrome_options.add_argument('--headless')
+    browser = webdriver.Chrome(options = chrome_options)
     browser.get(website)
     sleep(random.uniform(1, 3))
 
