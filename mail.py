@@ -30,11 +30,9 @@ def emailSendInfo(subject, content):
         server = smtplib.SMTP('smtp.qq.com')
         server.login(fromaddr, password)
         server.sendmail(fromaddr, toaddrs, m.as_string())
-        console_logger.info("the email was sent successfully !!!")
         file_logger.info("the email was sent successfully !!!")
         server.quit()
     except smtplib.SMTPException as e:
-        console_logger.info("error: {}".format(e))
         file_logger.info("error: {}".format(e))
 
 # if __name__ == '__main__':
