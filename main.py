@@ -15,6 +15,9 @@ def getLixinger(website, usr_name, password):
 
     chrome_options = Options()
     chrome_options.add_argument('--headless')
+    chrome_options.add_argument('--no-sandbox')
+    chrome_options.add_argument('--disable-gpu')
+    chrome_options.add_argument('--disable-dev-shm-usage') # 服务端需要加入此选项
     browser = webdriver.Chrome(options = chrome_options)
     browser.get(website)
     sleep(random.uniform(2, 3))
@@ -56,6 +59,9 @@ def getLixinger(website, usr_name, password):
 def getBondYields(website):
     chrome_options = Options()
     chrome_options.add_argument('--headless')
+    chrome_options.add_argument('--no-sandbox')
+    chrome_options.add_argument('--disable-gpu')
+    chrome_options.add_argument('--disable-dev-shm-usage')
     browser = webdriver.Chrome(options = chrome_options)
     browser.get(website)
     sleep(random.uniform(1, 2))
@@ -71,6 +77,9 @@ def getBondYields(website):
 def getConvertibleBond(website):
     chrome_options = Options()
     chrome_options.add_argument('--headless')
+    chrome_options.add_argument('--no-sandbox')
+    chrome_options.add_argument('--disable-gpu')
+    chrome_options.add_argument('--disable-dev-shm-usage')
     browser = webdriver.Chrome(options = chrome_options)
     browser.get(website)
     sleep(random.uniform(1, 3))
