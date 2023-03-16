@@ -89,7 +89,7 @@ def getConvertibleBond(website):
     sleep(random.uniform(1, 2))
 
     browser.find_element(By.XPATH,
-                         '/html/body/div[1]/div/div[2]/div[2]/div[1]/div[3]/a').click()
+                         '/html/body/div/div/div[2]/div[2]/div[1]/div[3]/div[1]/div[1]/a').click()
     sleep(random.uniform(1, 2))
 
     value = browser.find_element(By.XPATH,
