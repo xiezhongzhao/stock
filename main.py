@@ -130,8 +130,8 @@ def getConvertibleClass(median):
         return "可转债吸引力指数: {:.3f}, 泡沫期".format(median)
     return "可转债推荐指数数据出现异常"
 
+def main():
 
-if __name__ == '__main__':
     lixinger_website = config.lixinger_website
     lixinger_usr_name = config.lixinger_usr_name
     lixinger_password = config.lixinger_password
@@ -161,7 +161,17 @@ if __name__ == '__main__':
     emailSendInfo('基金可转债星级指数', content)
 
 
+### 定时启动
+def timerSchedule():
+    timer = threading.Timer(12*60*60, repeatTask)
+    timer.start()
 
+def repeatTask():
+    main()
+    timerSchedule()
+
+if __name__ == '__main__':
+    timerSchedule()
 
 
 

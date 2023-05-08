@@ -1,11 +1,17 @@
 #### lip师兄投资规则自动化     
 
 1. 安装chrome和chromedriver(注意版本对应)    
-https://cuiqingcai.com/31043.html
-   
+  https://cuiqingcai.com/31043.html
+
 2. 将代码移植到服务端 (scp)
 
-3. 定时启动代码 (crontab -e)   
+3. 启动代码
+
+   ```python
+   nohup python main.py 1>log.log 2>&1 &
+   ```
+
+   
 
 运行结果如下:
 ```angular2html
@@ -16,7 +22,6 @@ https://cuiqingcai.com/31043.html
 2023-02-02 10:23:58,035 - INFO: 可转债吸引力指数: 124.887, 泡沫期
 2023-02-02 10:24:11,051 - INFO: the email was sent successfully !!!
 ```
-
 
 
 
