@@ -20,16 +20,16 @@ password = 'hrjkfemiaatweadc'  #密码(部分邮箱为授权码)
 toaddrs = ['2234309583@qq.com'] #邮件接受方邮箱地址
 
 def emailSendInfo(subject, content):
-    textApart = MIMEText(content)
+    msg = MIMEText(content, 'plain', 'utf-8')
 
-    m = MIMEMultipart()
-    m.attach(textApart)
-    m['Subject'] = subject
+    msg['From'] = Header("xiezhongzhao <xiezhongzhao@qq.com>")
+    msg['To'] = Header("2234309583@qq.com")
+    msg['Subject'] = subject
 
     try:
         server = smtplib.SMTP('smtp.qq.com')
-        server.login(fromaddr, password)
-        server.sendmail(fromaddr, toaddrs, m.as_string())
+        server.login(fromaddr, password) #登录发信邮箱
+        server.sendmail(fromaddr, toaddrs, msg.as_string()) #发送邮件
         file_logger.info("the email was sent successfully !!!")
         server.quit()
     except smtplib.SMTPException as e:
